@@ -10,7 +10,7 @@
     </div>
 </template>
 
-<style lang="scss">
+<style lang="scss"> 
 .list-container {
     display: flex;
     flex-direction: column;
