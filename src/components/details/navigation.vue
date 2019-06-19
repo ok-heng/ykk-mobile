@@ -49,7 +49,6 @@
                 .navigation-row1-col2-row1 {
                     display: flex;
                     flex-wrap: wrap;
-                    align-items: center;
                     width: 6.5625rem;
                     height: 1.4375rem;
                     overflow: hidden;

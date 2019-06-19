@@ -4,9 +4,14 @@
             <div class="header-row1">
                 <div class="header-row1-col1">
                     <i id="header-row1-col1-icon" class="ion-ios-search"/>
-                    <input class="header-row1-col1-input" type="text" v-model="search" placeholder="请输入商品名称">
+                    <input
+                        class="header-row1-col1-input"
+                        type="text"
+                        v-model="search"
+                        placeholder="请输入商品名称"
+                    >
                 </div>
-                <div class="header-row1-col2">
+                <div class="header-row1-col2" @click="toCategory">
                     <i id="header-row1-col2-icon" class="ion-ios-list"/>
                     <span class="header-row1-col2-text">分类</span>
                 </div>
@@ -36,11 +41,11 @@
                 height: 1.875rem;
                 background-color: #f6f4f3;
                 #header-row1-col1-icon {
-                    margin-left: .5rem;
+                    margin-left: 0.5rem;
                     font-size: 1.1875rem;
                 }
                 .header-row1-col1-input {
-                    margin-left: .5rem;
+                    margin-left: 0.5rem;
                     width: 12.5rem;
                     height: 1rem;
                     background-color: #f6f4f3;
@@ -55,8 +60,8 @@
                     font-size: 1.125rem;
                 }
                 .header-row1-col2-text {
-                    margin-left: .3125rem;
-                    font-size: .9375rem;
+                    margin-left: 0.3125rem;
+                    font-size: 0.9375rem;
                 }
             }
         }
@@ -69,6 +74,11 @@ export default {
     name: "header",
     data() {
         return {};
+    },
+    methods: {
+        toCategory() {
+            this.$router.push({path: '/category'})
+        }
     }
 };
 </script>
