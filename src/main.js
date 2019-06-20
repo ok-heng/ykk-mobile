@@ -3,6 +3,15 @@ import router from '@/router/index'
 import store from '@/store/index'
 import App from '@/app'
 import { Image, Switch, Checkbox, Popup, Picker, Swipe, SwipeItem, Tab, Tabs, TreeSelect, Tabbar, TabbarItem } from 'vant'
+import VueLazyload from 'vue-lazyload'
+
+Vue.use(VueLazyload, {
+    preLoad: 1.3,
+    error: 'dist/error.png',
+    loading: 'dist/loading.gif',
+    attempt: 1,
+    lazyComponent: true
+});
 
 Vue.use(Image)
 Vue.use(Switch)

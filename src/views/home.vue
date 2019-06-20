@@ -7,7 +7,6 @@
         <Banner/>
         <Cards/>
         <Tabs/>
-        <div style="height: 3.125rem" />
     </div>
 </template>
 

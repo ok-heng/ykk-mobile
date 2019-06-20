@@ -2,7 +2,14 @@
     <div class="product-container">
         <div class="product-main">
             <div class="product-row1">
-                <van-image class="product-row1-image" :src="image" fit="contain" @click="toDetails"/>
+                <lazy-component>
+                    <van-image
+                        class="product-row1-image"
+                        :src="image"
+                        fit="contain"
+                        @click="toDetails"
+                    />
+                </lazy-component>
             </div>
             <div class="product-row2" @click="toDetails">
                 <span>{{title}}</span>
@@ -21,7 +28,7 @@
     width: 10.625rem;
     height: 17.875rem;
     background-color: #fff;
-    border-radius: .625rem;
+    border-radius: 0.625rem;
     .product-main {
         display: flex;
         flex-direction: column;
@@ -64,7 +71,10 @@ export default {
             const title = this.title;
             const price = this.price;
             const image = this.image;
-            this.$router.push({path: '/details', query: {title, price, image}});
+            this.$router.push({
+                path: "/details",
+                query: { title, price, image }
+            });
         }
     }
 };

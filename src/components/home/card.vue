@@ -8,7 +8,9 @@
             </div>
         </div>
         <div class="card-col2">
-            <van-image class="card-col2-image" :src="image" fit="contain"/>
+            <lazy-component>
+                <van-image class="card-col2-image" :src="image" fit="contain"/>
+            </lazy-component>
         </div>
     </div>
 </template>
@@ -22,7 +24,7 @@
         display: flex;
         flex-direction: column;
         .card-col1-text2 {
-            font-size: .75rem;
+            font-size: 0.75rem;
         }
         .card-col1-row3 {
             display: flex;
@@ -30,9 +32,9 @@
             align-items: center;
             margin-top: auto;
             height: 1rem;
-            border: .0625rem solid #dd7684;
+            border: 0.0625rem solid #dd7684;
             .card-col1-row3-text {
-                font-size: .625rem;
+                font-size: 0.625rem;
                 color: #dd7684;
             }
         }

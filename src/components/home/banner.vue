@@ -2,7 +2,9 @@
     <div class="banner-container">
         <div class="banner-main">
             <div class="banner-row1">
-                <van-image class="banner-row1-image" :src="banner[0].image" fit="contain"/>
+                <lazy-component>
+                    <van-image class="banner-row1-image" :src="banner[0].image" fit="contain"/>
+                </lazy-component>
             </div>
         </div>
     </div>
@@ -35,7 +37,7 @@
 export default {
     name: "banner",
     data() {
-        return{
+        return {
             banner: [
                 {
                     image: require("@/assets/imageModule.png")

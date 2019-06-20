@@ -1,6 +1,8 @@
 <template>
     <div class="categoryItem-row1">
-        <van-image class="categoryItem-row1-image" :src="image" fit="contain"/>
+        <lazy-component>
+            <van-image class="categoryItem-row1-image" :src="image" fit="contain"/>
+        </lazy-component>
         <span class="categoryItem-row1-text">{{title}}</span>
     </div>
 </template>
@@ -21,13 +23,13 @@ export default {
     flex-direction: column;
     align-items: center;
     .categoryItem-row1-image {
-        margin-bottom: .5rem;
+        margin-bottom: 0.5rem;
         width: 2.5rem;
         height: 2.5rem;
         border-radius: 1.25rem;
     }
     .categoryItem-row1-text {
-        font-size: .8125rem;
+        font-size: 0.8125rem;
     }
 }
 </style>

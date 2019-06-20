@@ -3,40 +3,11 @@
         <div class="swip-main">
             <div class="swip-row1">
                 <van-swipe :autoplay="3000">
-                    <van-swipe-item>
+                    <van-swipe-item v-for="(item, index) in images" :key="index">
                         <router-link :to="{path: '#'}">
-                            <van-image
-                                class="swip-row1-image"
-                                :src="images[0].image"
-                                fit="contain"
-                            />
-                        </router-link>
-                    </van-swipe-item>
-                    <van-swipe-item>
-                        <router-link :to="{path: '#'}">
-                            <van-image
-                                class="swip-row1-image"
-                                :src="images[1].image"
-                                fit="contain"
-                            />
-                        </router-link>
-                    </van-swipe-item>
-                    <van-swipe-item>
-                        <router-link :to="{path: '#'}">
-                            <van-image
-                                class="swip-row1-image"
-                                :src="images[2].image"
-                                fit="contain"
-                            />
-                        </router-link>
-                    </van-swipe-item>
-                    <van-swipe-item>
-                        <router-link :to="{path: '#'}">
-                            <van-image
-                                class="swip-row1-image"
-                                :src="images[3].image"
-                                fit="contain"
-                            />
+                            <lazy-component>
+                                <van-image class="swip-row1-image" :src="item.image" fit="contain"/>
+                            </lazy-component>
                         </router-link>
                     </van-swipe-item>
                 </van-swipe>
