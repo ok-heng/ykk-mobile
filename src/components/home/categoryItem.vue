@@ -1,8 +1,6 @@
 <template>
     <div class="categoryItem-row1">
-        <lazy-component>
-            <van-image class="categoryItem-row1-image" :src="image" fit="contain"/>
-        </lazy-component>
+        <van-image class="categoryItem-row1-image" :src="image" fit="contain"/>
         <span class="categoryItem-row1-text">{{title}}</span>
     </div>
 </template>

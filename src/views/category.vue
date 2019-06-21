@@ -9,6 +9,24 @@
             @itemclick="onItemClick"
         />
         <div style="height: 17.5rem; background-color: #fff"/>
+        <van-tabbar z-index="999" v-model="active" route>
+            <van-tabbar-item class="tabbar" replace to="/home">
+                <i slot="icon" id="icon" class="ion-ios-home"/>
+                首页
+            </van-tabbar-item>
+            <van-tabbar-item class="tabbar" replace to="/category">
+                <i slot="icon" id="icon" class="ion-ios-list"/>
+                分类
+            </van-tabbar-item>
+            <van-tabbar-item class="tabbar" replace to="/login/username">
+                <i slot="icon" id="icon" class="ion-ios-cart"/>
+                购物车
+            </van-tabbar-item>
+            <van-tabbar-item class="tabbar" replace to="/login/phone">
+                <i slot="icon" id="icon" class="ion-ios-person"/>
+                我的
+            </van-tabbar-item>
+        </van-tabbar>
     </div>
 </template>
 
@@ -30,6 +48,7 @@ export default {
     },
     data() {
         return {
+            active: 1,
             items: [
                 {
                     text: "产品分类 "

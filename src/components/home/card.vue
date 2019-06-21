@@ -8,9 +8,7 @@
             </div>
         </div>
         <div class="card-col2">
-            <lazy-component>
-                <van-image class="card-col2-image" :src="image" fit="contain"/>
-            </lazy-component>
+            <van-image class="card-col2-image" :src="image" fit="contain"/>
         </div>
     </div>
 </template>

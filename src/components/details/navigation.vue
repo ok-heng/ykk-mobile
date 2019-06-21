@@ -14,7 +14,6 @@
                 <div class="navigation-row1-col3"></div>
             </div>
         </div>
-        <div style="width: 100%; height: .03125rem; background-color: #ccc"/>
     </div>
 </template>
 
@@ -22,6 +21,8 @@
 .navigation-container {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    height: 3.125rem;
     background-color: #fff;
     .navigation-main {
         display: flex;

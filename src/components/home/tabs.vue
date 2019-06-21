@@ -2,7 +2,7 @@
     <div class="tabs-container">
         <div class="tabs-main">
             <div class="tabs-row1">
-                <van-tabs sticky swipeable>
+                <van-tabs>
                     <van-tab title="推荐">
                         <div class="tabs-row1-row1">
                             <div class="tabs-row1-row1-row1">

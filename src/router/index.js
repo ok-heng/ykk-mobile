@@ -15,7 +15,7 @@ export default new VueRouter({
     routes: [
         {
             path: '/',
-            redirect: '/home/'
+            redirect: '/home'
         },
         {
             path: '/home',
@@ -48,8 +48,12 @@ export default new VueRouter({
             ]
         },
         {
+            path: '',
+            redirect: '/home'
+        },
+        {
             path: '*',
-            redirect: '/home/'
+            redirect: '/home'
         }
     ],
     scrollBehavior(to, from, savedPosition) {

@@ -1,10 +1,11 @@
 <template>
     <div class="details-container">
-        <Navigation class="navigation" :title="title" />
+        <Navigation class="details-navigation" :title="title" />
         <Images :images="image" />
         <Information :title="title" :price="price" />
         <!-- <Description :description="description" /> -->
-        <div style="width: 100%; height: 3.125rem" />
+        <div style="width: 100%; height: 30.125rem; background-color: #fff" />
+        <Buy class="details-buy" />
     </div>
 </template>
 
@@ -12,12 +13,18 @@
 .details-container {
     display: flex;
     flex-direction: column;
-    .navigation {
-        position: relative;
-        top:0rem;
-        left:0rem;
+    .details-navigation {
+        position: fixed;
+        top: 0rem;
+        z-index: 999;
+        border-bottom: .03125rem solid #ccc;
     }
-    
+    .details-buy {
+        position: fixed;
+        bottom: 0rem;
+        z-index: 999;
+        border-top: .03125rem solid #ccc;
+    }
 }
 </style>
 
@@ -26,6 +33,7 @@ import Navigation from "@/components/details/navigation";
 import Images from "@/components/details/images";
 import Information from "@/components/details/information";
 import Description from "@/components/details/description";
+import Buy from "@/components/details/buy";
 
 export default {
     name: "details",
@@ -33,7 +41,8 @@ export default {
         Navigation,
         Images,
         Information,
-        Description
+        Description,
+        Buy
     },
     data() {
         return {
