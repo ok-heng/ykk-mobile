@@ -5,9 +5,7 @@
                 <van-swipe :autoplay="3000">
                     <van-swipe-item v-for="(item, index) in images" :key="index">
                         <router-link :to="{path: '#'}">
-                            <lazy-component>
-                                <van-image class="swip-row1-image" :src="item.image" fit="contain"/>
-                            </lazy-component>
+                            <van-image class="swip-row1-image" :src="item.image" fit="contain"/>
                         </router-link>
                     </van-swipe-item>
                 </van-swipe>
