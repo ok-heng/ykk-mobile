@@ -39,15 +39,14 @@ export default {
                 this.dataSort = this.$route.query.recommend;
             } else if (this.$route.query.cosmetic) {
                 this.dataSort = this.$route.query.cosmetic;
-            }
-            else if (this.$route.query.xs) {
+            } else if (this.$route.query.xs) {
                 this.dataSort = this.$route.query.xs;
-            }
-            else if (this.$route.query.yazi) {
+            } else if (this.$route.query.yazi) {
                 this.dataSort = this.$route.query.yazi;
-            }
-            else if (this.$route.query.huli) {
+            } else if (this.$route.query.huli) {
                 this.dataSort = this.$route.query.huli;
+            } else if (this.$route.query.dataCategory) {
+                this.dataSort = this.$route.query.dataCategory;
             }
         }
     }
