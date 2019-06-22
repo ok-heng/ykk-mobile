@@ -106,6 +106,7 @@
                 </van-tabs>
             </div>
         </div>
+        <div style="width: 100%; height: 3.125rem; background-color: #fff" />
     </div>
 </template>
 
