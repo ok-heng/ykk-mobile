@@ -36,6 +36,24 @@
             </div>
         </div>
         <div style="height: 3.125rem" />
+        <van-tabbar z-index="999" v-model="active" route>
+            <van-tabbar-item class="tabbar" replace to="/home">
+                <i slot="icon" id="icon" class="ion-ios-home"/>
+                首页
+            </van-tabbar-item>
+            <van-tabbar-item class="tabbar" replace to="/category">
+                <i slot="icon" id="icon" class="ion-ios-list"/>
+                分类
+            </van-tabbar-item>
+            <van-tabbar-item class="tabbar" replace to="/login/username">
+                <i slot="icon" id="icon" class="ion-ios-cart"/>
+                购物车
+            </van-tabbar-item>
+            <van-tabbar-item class="tabbar" replace to="/login/phone">
+                <i slot="icon" id="icon" class="ion-ios-person"/>
+                我的
+            </van-tabbar-item>
+        </van-tabbar>
     </div>
 </template>
 
@@ -44,6 +62,7 @@ export default {
     name: "login",
     data() {
         return {
+            active: 3,
             imageLogo: require("@/assets/logo.jpeg"),
             imageQQ: require("@/assets/qq.png"),
             imageWeibo: require("@/assets/weibo.png"),
