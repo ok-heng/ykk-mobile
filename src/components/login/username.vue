@@ -4,10 +4,10 @@
             <span class="row3-text">云购帐号登录</span>
         </div>
         <div class="row4">
-            <input class="row4-input" type="text" placeholder="请输入手机号码/邮箱/用户名">
+            <input class="row4-input" v-model="username" type="text" placeholder="请输入手机号码/邮箱/用户名" />
         </div>
         <div class="row5">
-            <input class="row5-input" :type="isPassword()" placeholder="请输入密码">
+            <input class="row5-input" v-model="password" :type="isPassword()" placeholder="请输入密码" />
             <van-switch
                 class="row5-switch"
                 v-model="switchChecked"
@@ -16,7 +16,7 @@
             />
         </div>
         <div class="row6">
-            <van-checkbox class="row6-checkbox" v-model="checkboxChecked" checked-color="#fb7d49"/>
+            <van-checkbox class="row6-checkbox" v-model="checkboxChecked" checked-color="#fb7d49" />
             <span class="row6-text">自动登录</span>
             <span>忘记密码？</span>
         </div>
@@ -25,19 +25,23 @@
                 <span>登录</span>
             </div>
         </div>
-        <div class="row8">
+        <span>提示：用户名abc，密码123</span>
+        <div class="row8" style="margin-top: 10px;">
             <span class="row8-text" @click="toPhone()">手机验证码登录</span>
         </div>
     </div>
 </template>
 
 <script>
+import axios from '@/axios.js'
 export default {
     name: "username",
     data() {
         return {
             switchChecked: false,
-            checkboxChecked: true
+            checkboxChecked: true,
+            username: "",
+            password: ""
         };
     },
     methods: {
@@ -46,7 +50,24 @@ export default {
             return this.switchChecked ? "text" : "password";
         },
         toPhone() {
-            this.$router.push({path: '/login/phone'});
+            this.$router.push({ path: "/login/phone" });
+        },
+        onLogin() {
+            let reg = this.username == "abc" && this.password == "123";
+            let redirect = this.$route.query.redirect;
+            if (reg) {
+                axios.getUser().then(data => {
+                    let token = data.data.token;
+                    let username = data.data.username;
+                    this.$store.dispatch("UserLogin", token);
+                    this.$store.dispatch("UserName", username);
+                    this.$router.push({ path: redirect });
+                });
+            } else {
+                console.log("error submit!!");
+
+                return false;
+            }
         }
     }
 };

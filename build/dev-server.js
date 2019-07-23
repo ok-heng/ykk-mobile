@@ -62,7 +62,18 @@ app.use(hotMiddleware)
 var staticPath = path.posix.join(config.dev.assetsPublicPath, config.dev.assetsSubDirectory)
 app.use(staticPath, express.static('./static'))
 
-var uri = 'http://localhost:' + port
+//json-server
+var jsonServer = require('json-server') //引入文件
+var apiServer = jsonServer.create(); //创建服务器
+var apiRouter = jsonServer.router('static/json/db.json') //引入json 文件 ，这里的地址就是你json文件的地址
+var middlewares = jsonServer.defaults(); //返回JSON服务器使用的中间件。
+apiServer.use(middlewares)
+apiServer.use('/api',apiRouter)
+apiServer.listen( port + 1,function(){ //json服务器端口:比如你使用8080,这里的json服务器就是8081端口
+ console.log('JSON Server is running') //json server成功运行会在git bash里面打印出'JSON Server is running'
+})
+
+var uri = 'http://192.168.1.113:' + port
 
 devMiddleware.waitUntilValid(function () {
   console.log('> Listening at ' + uri + '\n')

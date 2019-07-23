@@ -1,7 +1,8 @@
 <template>
     <div>
-        <router-view/>
-        
+        <keep-alive>
+            <router-view />
+        </keep-alive>
     </div>
 </template>
 
@@ -10,7 +11,7 @@ export default {
     name: "app",
     data() {
         return {
-            active: 0,
+            active: 0
         };
     }
 };

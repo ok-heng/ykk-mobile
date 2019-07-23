@@ -4,6 +4,13 @@ import store from '@/store/index'
 import App from '@/app'
 import { Image, Switch, Checkbox, Popup, Picker, Swipe, SwipeItem, Tab, Tabs, TreeSelect, Tabbar, TabbarItem } from 'vant'
 import VueLazyload from 'vue-lazyload'
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+import axios from 'axios';//引入文件
+Vue.prototype.$ajax = axios;
+
+
+Vue.use(ElementUI);
 
 Vue.use(VueLazyload, {
     preLoad: 1.3,

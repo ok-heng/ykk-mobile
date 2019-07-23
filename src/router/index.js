@@ -7,15 +7,45 @@ import Details from '@/views/details'
 import Login from '@/views/login'
 import Phone from '@/components/login/phone'
 import Username from '@/components/login/username'
+import Login1 from '@/views/login1'
+import Hello from '@/views/hello'
+import Cart from '@/views/cart'
+import Person from '@/views/person'
+import store from '@/store/index'
 
 Vue.use(VueRouter)
 
-export default new VueRouter({
+const router = new VueRouter({
     mode: 'history',
     routes: [
         {
             path: '/',
             redirect: '/home'
+        },
+        {
+            path: '/login1',
+            component: Login1
+        },
+        {
+            path: '/hello',
+            component: Hello,
+            meta: {
+                requiresAuth: true
+            }
+        },
+        {
+            path: '/cart',
+            component: Cart,
+            meta: {
+                requiresAuth: true
+            }
+        },
+        {
+            path: '/person',
+            component: Person,
+            meta: {
+                requiresAuth: true
+            }
         },
         {
             path: '/home',
@@ -62,5 +92,25 @@ export default new VueRouter({
         } else {
             return { x: 0, y: 0 }
         }
-    }
+    },
 })
+
+router.beforeEach((to, from, next) => {
+    let token = store.state.token;
+    if (to.meta.requiresAuth) {
+        if (token) {
+            next();
+        } else {
+            next({
+                path: '/login/username',
+                query: {
+                    redirect: to.fullPath
+                }
+            });
+        }
+    } else {
+        next();
+    }
+});
+
+export default router;

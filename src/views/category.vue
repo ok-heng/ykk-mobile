@@ -18,11 +18,11 @@
                 <i slot="icon" id="icon" class="ion-ios-list"/>
                 分类
             </van-tabbar-item>
-            <van-tabbar-item class="tabbar" replace to="/login/username">
+            <van-tabbar-item class="tabbar" replace to="/cart">
                 <i slot="icon" id="icon" class="ion-ios-cart"/>
                 购物车
             </van-tabbar-item>
-            <van-tabbar-item class="tabbar" replace to="/login/phone">
+            <van-tabbar-item class="tabbar" replace to="/person">
                 <i slot="icon" id="icon" class="ion-ios-person"/>
                 我的
             </van-tabbar-item>
