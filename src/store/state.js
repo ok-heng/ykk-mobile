@@ -1,4 +1,7 @@
 export default {
+    status: '',
+    token: window.localStorage.getItem('token'),
+    username: '',
     recommend: [
         {
             title: "雅姿恒时紧致面霜sp+",

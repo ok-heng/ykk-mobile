@@ -1,13 +1,9 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import state from './state'
 
 Vue.use(Vuex)
 
-const state = {
-    status: '',
-    token: window.localStorage.getItem('token'),
-    username: ''
-}
 const mutations = {
     LOGIN: function (state, data) {
         state.token = data;

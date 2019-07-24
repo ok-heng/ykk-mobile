@@ -3,7 +3,7 @@
         <Navigation class="details-navigation" :title="title" />
         <Images :images="image" />
         <Information :title="title" :price="price" />
-        <!-- <Description :description="description" /> -->
+        <Description :description="description" />
         <div style="width: 100%; height: 30.125rem; background-color: #fff" />
         <Buy class="details-buy" />
     </div>

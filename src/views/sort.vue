@@ -31,7 +31,7 @@ export default {
         };
     },
     created() {
-        this.filter();
+        this.filter(); 
     },
     methods: {
         filter() {

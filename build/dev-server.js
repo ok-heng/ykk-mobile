@@ -73,7 +73,7 @@ apiServer.listen( port + 1,function(){ //json服务器端口:比如你使用8080
  console.log('JSON Server is running') //json server成功运行会在git bash里面打印出'JSON Server is running'
 })
 
-var uri = 'http://192.168.1.113:' + port
+var uri = 'http://localhost:' + port
 
 devMiddleware.waitUntilValid(function () {
   console.log('> Listening at ' + uri + '\n')
