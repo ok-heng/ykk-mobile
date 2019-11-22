@@ -17,7 +17,7 @@
     "es6-promise": "^4.2.8",
     "ionicons": "^4.5.8",
     "json-server": "^0.15.0",
-    "vant": "^2.0.0",
+    "vant": "^2.1.8",
     "vue": "^2.1.10",
     "vue-lazyload": "^1.2.6",
     "vue-resource": "^1.5.1",
